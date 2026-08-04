@@ -1,0 +1,18 @@
+{
+  "name": "ruco-store-local",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "description": "",
+  "main": "restore_site.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "vite": "^8.2.0"
+  }
+}
