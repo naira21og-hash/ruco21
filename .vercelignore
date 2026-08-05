@@ -1,0 +1,7 @@
+node_modules
+.git
+.agents
+.codex
+.vercel
+restore_site.py
+restore_site.js
