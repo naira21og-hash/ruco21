@@ -1,4 +1,7 @@
 {
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": ".",
   "routes": [
     { "handle": "filesystem" },
     { "src": "/assets/(.*)", "dest": "/app/assets/$1" },
