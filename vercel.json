@@ -3,10 +3,10 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "routes": [
-    { "handle": "filesystem" },
     { "src": "/assets/(.*)", "dest": "/app/assets/$1" },
     { "src": "/vite.svg", "dest": "/app/vite.svg" },
     { "src": "/", "dest": "/app/index.html" },
+    { "handle": "filesystem" },
     { "src": "/.*", "dest": "/app/index.html" }
   ]
 }
