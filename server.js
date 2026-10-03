@@ -5,6 +5,7 @@ const path = require('path');
 const port = process.env.PORT || 8000;
 const workspaceRoot = __dirname;
 const appDir = path.join(workspaceRoot, 'app');
+const imagesDir = path.join(workspaceRoot, 'images');
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8',
@@ -22,7 +23,7 @@ const mimeTypes = {
 
 function isAllowedPath(candidatePath) {
   const resolved = path.resolve(candidatePath);
-  return resolved === workspaceRoot || resolved.startsWith(workspaceRoot + path.sep);
+  return resolved.startsWith(appDir + path.sep) || resolved.startsWith(imagesDir + path.sep);
 }
 
 function resolveFile(reqPath) {
@@ -54,7 +55,16 @@ function resolveFile(reqPath) {
 
 http.createServer((req, res) => {
   const reqPath = req.url || '/';
-  const filePath = resolveFile(reqPath);
+  let filePath;
+  try {
+    filePath = resolveFile(reqPath);
+    // Match Vercel's SPA fallback for direct product/category visits.
+    if (!filePath && !path.extname(reqPath.split('?')[0])) filePath = path.join(appDir, 'index.html');
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Invalid request');
+    return;
+  }
 
   if (!filePath) {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });

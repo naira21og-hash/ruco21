@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ruco Store catalog",
+  "type": "object",
+  "required": [
+    "categories",
+    "products"
+  ],
+  "properties": {
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/product"
+      }
+    }
+  },
+  "$defs": {
+    "product": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "price",
+        "category",
+        "inStock",
+        "images"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Stable existing identity; keep IDs to preserve links and cart records."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "price": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Listing price in GBP. This also powers the cart."
+        },
+        "previousPrice": {
+          "type": "number",
+          "minimum": 0
+        },
+        "category": {
+          "type": "string",
+          "description": "Matches a category ID; high-ticket is a price-based collection."
+        },
+        "subcategory": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Only supply a verified brand; not inferred from a name."
+        },
+        "sku": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Actual listing creation date; omitted for migrated records when unknown."
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "descriptor": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string",
+          "description": "Confirmed condition: New, Open box, Excellent, Good, Used, or a clear custom label."
+        },
+        "conditionDescription": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        },
+        "inventory": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minOrder": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxPerOrder": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "image": {
+          "type": "string",
+          "description": "Primary image; use the first images entry."
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "string",
+            "pattern": "^/(?!/)|^https://"
+          },
+          "description": "Ordered listing images, primary first. Add real condition and packaging photographs where available."
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "options"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "options": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "details": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "included": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "delivery": {
+          "type": "string"
+        },
+        "verification": {
+          "type": "string",
+          "description": "Actual verification information; never a generic authenticity claim."
+        },
+        "warranty": {
+          "type": "string"
+        },
+        "returns": {
+          "type": "string"
+        },
+        "faq": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "question",
+              "answer"
+            ],
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marketRange": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "type": "string"
+            },
+            "asOf": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "description": "Evidence-based typical market range in GBP. Gross spread is calculated, never stored as guaranteed profit."
+        },
+        "deliverySummary": {
+          "type": "string",
+          "description": "Short confirmed delivery information displayed next to purchase controls."
+        },
+        "priceOnRequest": {
+          "type": "boolean",
+          "description": "True for unpriced enquiry listings. Price must be null; stock must remain unconfirmed."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "priceOnRequest": {
+                "const": true
+              }
+            },
+            "required": [
+              "priceOnRequest"
+            ]
+          },
+          "then": {
+            "properties": {
+              "price": {
+                "type": "null"
+              },
+              "inStock": {
+                "const": false
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "price": {
+                "type": "number",
+                "minimum": 0
+              },
+              "images": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -5,3 +5,11 @@ node_modules
 .vercel
 restore_site.py
 restore_site.js
+.env*
+src
+scripts
+tests
+docs
+server.js
+package.json
+package-lock.json

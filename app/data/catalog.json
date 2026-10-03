@@ -1,0 +1,299 @@
+{
+  "categories": [
+    {
+      "id": "tech",
+      "name": "Tech",
+      "description": "Everyday devices. A considered upgrade."
+    },
+    {
+      "id": "gaming",
+      "name": "Gaming",
+      "description": "A better way to play."
+    },
+    {
+      "id": "transport",
+      "name": "Transport",
+      "description": "Make more of the journey."
+    },
+    {
+      "id": "off-road",
+      "name": "Off-Road",
+      "description": "For the path less travelled."
+    },
+    {
+      "id": "style",
+      "name": "Style",
+      "description": "Details that make the difference."
+    },
+    {
+      "id": "home",
+      "name": "Home & Everyday",
+      "description": "Thoughtful additions to your space."
+    },
+    {
+      "id": "resources",
+      "name": "Resources",
+      "description": "A starting point for your next chapter."
+    },
+    {
+      "id": "other",
+      "name": "Other Finds",
+      "description": "Something a little different."
+    },
+    {
+      "id": "high-ticket",
+      "name": "High Ticket",
+      "description": "Premium finds from ?2,000. Explore current availability."
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Beginners Reselling Guide",
+      "price": 3.5,
+      "image": "/images/beginners-reselling-guide-v2.jpg",
+      "imageFit": "contain",
+      "inStock": true,
+      "description": "New to the game? The Beginners Reselling Guide breaks everything down into clear, practical steps, giving you a straightforward starting point without the unnecessary jargon.",
+      "category": "resources",
+      "subcategory": "Guides",
+      "images": [
+        "/images/beginners-reselling-guide-v2.jpg"
+      ],
+      "featured": false,
+      "keywords": [],
+      "bestSeller": false,
+      "isNew": true
+    },
+    {
+      "id": 2,
+      "name": "Ruco AirPodz",
+      "price": 38.97,
+      "minOrder": 3,
+      "image": "/images/catalog-2.jpg",
+      "inStock": true,
+      "description": "Ruco AirPodz deliver crisp, reliable wireless sound in a compact design that is easy to take anywhere. They are a simple everyday choice for music, calls, and everything in between.",
+      "category": "tech",
+      "subcategory": "Audio",
+      "images": [
+        "/images/catalog-2.jpg"
+      ],
+      "featured": false,
+      "keywords": [],
+      "bestSeller": false,
+      "isNew": false
+    },
+    {
+      "id": 3,
+      "name": "IPhone 17 Pro Max",
+      "price": 189.97,
+      "leavingSoon": true,
+      "image": "/images/catalog-3.jpg",
+      "inStock": true,
+      "variants": [
+        {
+          "type": "storage",
+          "options": [
+            "256GB",
+            "512GB",
+            "1TB",
+            "2TB"
+          ]
+        },
+        {
+          "type": "colour",
+          "options": [
+            "Cosmic Orange",
+            "Deep Blue",
+            "Silver"
+          ]
+        }
+      ],
+      "description": "The IPhone 17 Pro Max brings a premium feel, smooth everyday performance, and a spacious display together in one polished device. It is built for anyone who wants a capable phone that looks as good as it performs.",
+      "category": "tech",
+      "subcategory": "Phones",
+      "images": [
+        "/images/catalog-3.jpg"
+      ],
+      "featured": true,
+      "keywords": [],
+      "bestSeller": false,
+      "isNew": false
+    },
+    {
+      "id": 4,
+      "name": "AirPodz Max",
+      "price": 119.97,
+      "leavingSoon": true,
+      "image": "/images/catalog-4.jpg",
+      "inStock": true,
+      "description": "AirPodz Max combine comfortable over-ear coverage with rich, immersive sound for work, travel, or switching off after a long day. The clean design keeps them feeling premium without trying too hard.",
+      "category": "tech",
+      "subcategory": "Audio",
+      "images": [
+        "/images/catalog-4.jpg"
+      ],
+      "featured": false,
+      "keywords": [],
+      "bestSeller": false,
+      "isNew": false
+    },
+    {
+      "id": 5,
+      "name": "S26 Ultra",
+      "price": 199.98,
+      "leavingSoon": true,
+      "image": "/images/s26-ultra-v2.jpg",
+      "imageFit": "contain",
+      "isNew": false,
+      "inStock": true,
+      "inventory": 25,
+      "variants": [
+        {
+          "type": "storage",
+          "options": [
+            "256GB",
+            "512GB",
+            "1TB"
+          ]
+        },
+        {
+          "type": "colour",
+          "options": [
+            "Black",
+            "White",
+            "Silver Shadow"
+          ]
+        }
+      ],
+      "description": "The S26 Ultra pairs a bold edge-to-edge display with a refined, modern build and dependable everyday performance. Whether you are working, creating, or just staying connected, it is designed to keep things feeling smooth and effortless.",
+      "category": "tech",
+      "subcategory": "Phones",
+      "images": [
+        "/images/s26-ultra-v2.jpg"
+      ],
+      "featured": true,
+      "keywords": [],
+      "bestSeller": false
+    },
+    {
+      "id": 6,
+      "name": "Apple Watch Ultra 3",
+      "price": 49.99,
+      "image": "/images/apple-watch-ultra-3-v2.jpg",
+      "imageFit": "contain",
+      "inStock": true,
+      "limitedStock": true,
+      "inventory": 3,
+      "variants": [
+        {
+          "type": "colour",
+          "options": [
+            "Black Titanium",
+            "Natural Titanium"
+          ]
+        }
+      ],
+      "description": "The Apple Watch Ultra 3 is built for everyday performance with a bold, durable design and an easy-to-read display. Contact us on Telegram for the current price and availability.",
+      "category": "tech",
+      "subcategory": "Wearables",
+      "images": [
+        "/images/apple-watch-ultra-3-v2.jpg"
+      ],
+      "featured": true,
+      "keywords": [],
+      "bestSeller": true,
+      "isNew": false
+    },
+    {
+      "id": 7,
+      "name": "A1 Props",
+      "price": 90,
+      "image": "/images/a1-prop-plug.jpg",
+      "imageFit": "contain",
+      "isNew": false,
+      "inStock": true,
+      "inventory": 25,
+      "maxPerOrder": 1,
+      "description": "Introducing A1 Props, a premium all-purpose choice created for customers who value dependable quality and a clean, practical finish. Designed with versatility in mind, it is an excellent option for a wide range of everyday uses. Contact our team if you need compatibility or specification details before ordering.",
+      "category": "other",
+      "subcategory": "Other",
+      "images": [
+        "/images/a1-prop-plug.jpg"
+      ],
+      "featured": false,
+      "keywords": [],
+      "bestSeller": false
+    },
+    {
+      "id": 8,
+      "name": "iPhone 18 Pro Max",
+      "category": "tech",
+      "subcategory": "Phones",
+      "price": 220,
+      "priceOnRequest": false,
+      "inStock": true,
+      "availability": "confirmation_required",
+      "images": [
+        "/images/product-8-outline.png"
+      ],
+      "featured": false,
+      "descriptor": "A20 Pro performance with a 6.9-inch ProMotion display",
+      "condition": "Brand new and unused",
+      "conditionDescription": "Supplied as a new, unused handset. Confirm the exact finish, storage option, seal status and included items with our team before payment.",
+      "variants": [
+        {
+          "type": "storage",
+          "options": ["256GB", "512GB", "1TB", "2TB"]
+        },
+        {
+          "type": "colour",
+          "options": ["Black", "Silver", "Glacier", "Burgundy"]
+        }
+      ],
+      "description": "iPhone 18 Pro Max pairs a spacious ProMotion display with Apple’s A20 Pro chip, a variable-aperture 48MP Fusion Main camera and an aluminium unibody design. Choose your preferred storage and finish before adding it to your order.",
+      "details": [
+        "6.9-inch Super Retina XDR display with ProMotion",
+        "A20 Pro chip with vapour chamber cooling",
+        "48MP Pro Fusion camera system with variable-aperture Main camera",
+        "18MP Center Stage front camera",
+        "USB-C, MagSafe, Face ID and Camera Control"
+      ],
+      "included": [
+        "iPhone 18 Pro Max handset",
+        "USB-C charging cable"
+      ],
+      "delivery": "Choose a destination during checkout. We confirm the delivery service, cost and estimated timing before payment. International duties and taxes, where applicable, are confirmed with the buyer before the order is accepted.",
+      "verification": "Before payment, our team can confirm the selected storage, finish, condition and available supporting information for the listing.",
+      "warranty": "Any applicable warranty and its coverage are confirmed with our team before payment. Your statutory consumer rights are not affected.",
+      "returns": "Review the delivery and returns terms before ordering. Contact our team before sending any item back so that we can confirm the return process.",
+      "faq": [
+        {
+          "question": "Which storage and colours can I choose?",
+          "answer": "Select a storage and colour option on this page. We will confirm the requested combination is available before payment."
+        },
+        {
+          "question": "What is included?",
+          "answer": "The listing includes the handset and a USB-C charging cable. Confirm any additional packaging or accessories with our team before ordering."
+        },
+        {
+          "question": "Can this be delivered internationally?",
+          "answer": "Yes, subject to destination confirmation. Choose your country at checkout and our team will confirm delivery availability, cost and estimated timing."
+        },
+        {
+          "question": "How do I complete my order?",
+          "answer": "Choose your options, add the item to your cart and complete checkout details. Your order enquiry is then prepared for Telegram or WhatsApp so our team can confirm everything before payment."
+        }
+      ],
+      "keywords": [
+        "Phones"
+      ],
+      "sourceUrl": "https://www.rucosupply.com/catalog",
+      "image": "/images/product-8-outline.png",
+      "imageType": "illustration",
+      "imageNote": "Illustrative product sketch. Confirm the exact model, finish and included items before ordering.",
+      "bestSeller": false,
+      "isNew": true
+    }
+  ]
+}

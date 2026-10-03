@@ -3,16 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node scripts/build.js && node server.js",
+    "dev": "node scripts/build.js && node server.js",
+    "build": "node scripts/build.js",
+    "lint": "node scripts/check.js",
+    "test": "node --test tests/*.test.js",
+    "check": "npm run lint && npm test && npm run build"
   },
-  "description": "",
-  "main": "restore_site.js",
+  "description": "Editorial reseller storefront with a catalog-backed Telegram enquiry flow.",
+  "main": "server.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "vite": "^8.2.0"
   }
 }

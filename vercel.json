@@ -4,6 +4,8 @@
   "outputDirectory": ".",
   "routes": [
     { "src": "/assets/(.*)", "dest": "/app/assets/$1" },
+    { "src": "/data/(.*)", "dest": "/app/data/$1" },
+    { "src": "/favicon.svg", "dest": "/app/favicon.svg" },
     { "src": "/vite.svg", "dest": "/app/vite.svg" },
     { "src": "/", "dest": "/app/index.html" },
     { "handle": "filesystem" },
