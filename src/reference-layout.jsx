@@ -201,7 +201,6 @@ function StoreCard({ product: p }) {
         {p.images.length > 1 && (
           <span className="image-count">{p.images.length} images</span>
         )}
-        <span className="card-arrow">↗</span>
       </Ge>
       <div className="card-topline">{storeCategory(p.category)?.name}</div>
       <Ge className="product-name" to={storeSlug(p)}>
@@ -299,9 +298,18 @@ function StoreHome() {
       </section>
       <div className="trust-strip">
         <div className="container">
-          <span>◇ Clear product information</span>
-          <span>□ Delivery arranged with our team</span>
-          <span>↗ Personal order support</span>
+          <span className="trust-item">
+            <span className="trust-badge">◇</span>
+            Clear product information
+          </span>
+          <span className="trust-item">
+            <span className="trust-badge">□</span>
+            Delivery arranged with our team
+          </span>
+          <span className="trust-item">
+            <span className="trust-badge">↗</span>
+            Personal order support
+          </span>
         </div>
       </div>
       <StoreCollection eyebrow="Recently added" title="New at Ruco." products={latest.slice(0, 4)} link="/catalog?collection=new" />
